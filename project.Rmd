@@ -7,3 +7,17 @@ output:
 ---
 
 # Here's a nice project
+
+```{r message = F}
+library(tidyverse)
+
+plot_df =
+  tibble(
+    x = runif(100),
+    y = 1 + 2 * x + rnorm(100)
+  )
+
+plot_df |> 
+  ggplot(aes(x = x, y = y)) +
+  geom_point()
+```

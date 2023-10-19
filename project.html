@@ -357,6 +357,18 @@ div.tocify {
 
 <div id="heres-a-nice-project" class="section level1">
 <h1>Here’s a nice project</h1>
+<pre class="r"><code>library(tidyverse)
+
+plot_df =
+  tibble(
+    x = runif(100),
+    y = 1 + 2 * x + rnorm(100)
+  )
+
+plot_df |&gt; 
+  ggplot(aes(x = x, y = y)) +
+  geom_point()</code></pre>
+<p><img src="project_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
 </div>
 
 
