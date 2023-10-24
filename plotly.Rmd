@@ -3,14 +3,14 @@ author: "Yuki Joyama"
 date: "2023-10-24"
 output: html_document
 ---
-```{r}
+```{r message=FALSE}
 library(tidyverse)
 library(p8105.datasets)
 
 library(plotly)
 ```
 
-```{r}
+```{r message=FALSE}
 data(nyc_airbnb)
 
 nyc_airbnb = 
@@ -27,7 +27,7 @@ nyc_airbnb =
 
 Let's male a scatterplot
 
-```{r}
+```{r message=FALSE}
 nyc_airbnb |>
   mutate(text_label = str_c("Price: $", price, "\nRating: ", rating)) |> 
   plot_ly(
@@ -36,7 +36,23 @@ nyc_airbnb |>
 
 ```
 
-Let 
+Let's make a box plot
+```{r message=FALSE}
+nyc_airbnb |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, price)) |> 
+  plot_ly(y = ~price, color = ~neighbourhood, type = "box", colors = "viridis")
+```
+
+Let's make a bar plot!
+
+```{r message=F}
+nyc_airbnb |>
+  count(neighbourhood) |> 
+  mutate(neighbourhood = fct_reorder(neighbourhood, n)) |> 
+  plot_ly(x = ~ neighbourhood, y = ~n, color = ~neighbourhood,
+          type = "bar", colors = "viridis")
+```
+
 
 
 

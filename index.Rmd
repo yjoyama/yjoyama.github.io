@@ -23,7 +23,8 @@ My cat is ted. This is ted.
 Also here's the "backstage" in Alumni Auditorium:
 
 ![](images/backstage.jpg)
-
+# Other stuff on this page
+[plotly](plotly.html)
 
 
 
